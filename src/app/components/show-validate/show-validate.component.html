@@ -1,0 +1,10 @@
+
+<span *ngIf="(field.dirty||field.touched)&& field.errors?.['required']" class="text-danger">Không được bỏ trống!</span>
+<span *ngIf="(field.dirty||field.touched)&& field.errors?.['minlength']" class="text-danger">{{field.errors?.['minlength'].requiredLength}} Kí tự.</span>
+
+<span *ngIf="(field.dirty||field.touched)&& field.errors?.['min']" class="text-danger">Tối thiểu là {{field.errors?.['min'].min}} tuổi!.</span>
+<span *ngIf="(field.dirty||field.touched)&& field.errors?.['max']" class="text-danger">Tối đa là {{field.errors?.['max'].max}} tuổi!.</span>
+<!-- custom -->
+<span *ngIf="(field.dirty||field.touched)&& field.errors?.['hasProductError']" class="text-danger">{{key}} phải chứa 'product'!.</span>
+
+

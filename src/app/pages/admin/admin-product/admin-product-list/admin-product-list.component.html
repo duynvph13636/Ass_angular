@@ -1,0 +1,39 @@
+<div class="mb-3">
+  <a routerLink="/admin/products/create"
+    ><button class="btn btn-primary">Create Product</button></a
+  >
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>STT</th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Sale Price</th>
+      <th>Image</th>
+      <th>Description</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of products; index as i">
+      <td>{{ i + 1 }}</td>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.sale_price }}</td>
+      <td>{{ product.img }}</td>
+      <td>{{ product.desc }}</td>
+      <td>
+        <a routerLink="/admin/products/{{ product._id }}">
+          <button class="btn btn-info">Detail</button>
+        </a>
+        <a routerLink="/admin/products/edit/{{ product._id }}" class="ms-2">
+          <button class="btn btn-warning">Edit</button>
+        </a>
+        <button class="btn btn-danger ms-2" (click)="onDelete(product._id)">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
